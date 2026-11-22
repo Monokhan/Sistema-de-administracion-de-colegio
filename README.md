@@ -32,18 +32,22 @@ Aplicación de consola en Python para **administrar alumnos, cursos y matrícula
 ## 🚀 Cómo usarlo
 
 ```bash
-python "creacion de la DB.py"           # crea tablaDB.db con las tablas y los cursos (ajusta la ruta)
+python "creacion de la DB.py"           # crea tablaDB.db con las tablas y los cursos
 python sistema_adeministracion_colegio.py
 ```
 
-## 🧭 Estado
+## ✅ Estado
 
-| Opción | Estado |
+Todas las opciones del menú funcionan y validan los datos:
+
+| Opción | Qué hace |
 |---|---|
-| Insertar alumno | ✅ Funciona |
-| Retirar alumno | ⚠️ Falta `con.commit()`, por lo que el cambio no se guarda |
-| Matricular alumno | ⚠️ Usa variables con nombres distintos (`tablaDB.db`, `id_curso`) y falla al ejecutarse |
-| Listar cursos y alumnos | 🚧 Pendiente |
+| Insertar alumno | Registra el alumno y avisa si el DNI ya existe |
+| Retirar alumno | Marca al alumno como retirado y guarda el cambio |
+| Matricular alumno | Verifica que el alumno esté activo y que el curso exista, y entrega el código de matrícula |
+| Listar cursos y alumnos | Muestra cada curso con sus alumnos y los alumnos sin matrícula |
+
+Si se escribe algo que no es un número donde corresponde uno, el programa vuelve a preguntar en vez de cerrarse.
 
 ```
 ├── sistema_adeministracion_colegio.py   ← aplicación y menú
